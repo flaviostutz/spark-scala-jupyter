@@ -4,6 +4,10 @@ Jupyter notebook server prepared for running Spark with Scala kernels on a remot
 
 See a **[complete example](/example)** of running the Spark/Scala Notebook using custom jars, SBT packaging, clustered HDFS, Scala with data visualization on Notebooks etc at [/example](/example)
 
+Check for a [demonstration video here](https://youtu.be/ASMh0yHJZls)
+
+<img src="demo1.png">
+
 ## Usage
 
 * Create docker-compose.yml

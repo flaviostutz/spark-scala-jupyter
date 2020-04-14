@@ -2,7 +2,7 @@
 
 Jupyter notebook server prepared for running Spark with Scala kernels on a remote Spark master
 
-See a complete example of running the Spark/Scala Notebook using custom jars with SBT packaging at [/example](/example)
+See a **[complete example](/example)** of running the Spark/Scala Notebook using custom jars, SBT packaging, clustered HDFS, Scala with data visualization on Notebooks etc at [/example](/example)
 
 ## Usage
 

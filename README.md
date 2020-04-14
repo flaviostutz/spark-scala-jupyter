@@ -1,7 +1,8 @@
 # spark-scala-jupyter
+
 Jupyter notebook server prepared for running Spark with Scala kernels on a remote Spark master
 
-Refer to https://github.com/vegas-viz/Vegas on how to show graphs from Spark Dataframes.
+See a complete example of running the Spark/Scala Notebook using custom jars with SBT packaging at [/example](/example)
 
 ## Usage
 
@@ -66,13 +67,13 @@ println("************")
 
 * View running App (from Jupyter notebook execution!)
 
-## ENVs
+### ENVs
 
-* JUPYTER_TOKEN - shared password key for accessing jupyter notebooks. defaults to ''
+* JUPYTER_TOKEN - password for accessing notebook server. defaults to ''
+* SPARK_MASTER - Spark mastery location for submiting Spark jobs. ex.: 'spark://spark-master:7077'. defaults to 'local[*]'
+* HDFS_URL - HDFS nameserver url to be used by Spark. ex.: hdfs://namenode1:8020. defaults to ''
 
-* SPARK_MASTER - Spark master locations. Ex.: "spark://spark-master:7077". defaults to "local[*]"
-
-## Visualizations
+## Some Jupyter Visualizations with Scala
 
 * With Vegas - https://github.com/vegas-viz/Vegas
 

@@ -13,6 +13,7 @@ services:
     environment:
       - JUPYTER_TOKEN=flaviostutz
       - SPARK_MASTER=spark://spark-master:7077
+      - HDFS_URL=hdfs://namenode1:8020
 
   #SPARK SERVICES
   spark-master:

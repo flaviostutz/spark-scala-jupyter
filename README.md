@@ -1,6 +1,8 @@
 # spark-scala-jupyter
 Jupyter notebook server prepared for running Spark with Scala kernels on a remote Spark master
 
+Refer to https://github.com/vegas-viz/Vegas on how to show graphs from Spark Dataframes.
+
 ## Usage
 
 * Create docker-compose.yml
@@ -70,3 +72,24 @@ println("************")
 
 * SPARK_MASTER - Spark master locations. Ex.: "spark://spark-master:7077". defaults to "local[*]"
 
+## Visualizations
+
+* With Vegas - https://github.com/vegas-viz/Vegas
+
+```
+%AddDeps org.vegas-viz vegas_2.11 0.3.11 --transitive
+implicit val render = vegas.render.ShowHTML(kernel.display.content("text/html", _))
+import vegas._
+import vegas.data.External._
+
+Vegas("A simple bar chart with embedded data.").
+  withData(Seq(
+    Map("a" -> "A", "b" -> 28), Map("a" -> "B", "b" -> 55), Map("a" -> "C", "b" -> 43),
+    Map("a" -> "D", "b" -> 91), Map("a" -> "E", "b" -> 81), Map("a" -> "F", "b" -> 53),
+    Map("a" -> "G", "b" -> 19), Map("a" -> "H", "b" -> 87), Map("a" -> "I", "b" -> 52)
+  )).
+  encodeX("a", Ordinal).
+  encodeY("b", Quantitative).
+  mark(Bar).
+  show
+```

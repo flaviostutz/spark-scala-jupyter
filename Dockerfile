@@ -15,11 +15,11 @@ RUN python3 -m pip --no-cache-dir install requests notebook ipywidgets && \
 # Apache Toree kernel
 RUN pip3.7 install pyzmq
 RUN pip3.7 install toree && \
-    jupyter toree install --spark_home=/spark/ --kernel_name="Scala-Spark-Tore"
+    jupyter toree install --spark_home=/spark/ --kernel_name="Spark Tore"
 
-# Spylon-kernel
-RUN pip3.7 install spylon-kernel && \
-    python3 -m spylon_kernel install --kernel_name="Scala-Spark-Spylon"
+# # Spylon-kernel
+# RUN pip3.7 install spylon-kernel && \
+#     python3 -m spylon_kernel install
 
 # Cleanup
 RUN apk del --purge -r build_dependencies && \

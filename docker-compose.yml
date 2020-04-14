@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+
+  spark-scala-jupyter:
+    build: .
+    image: flaviostutz/spark-scala-jupyter
+    ports:
+      - 8888:8888
+      - 6006:6006
+    # volumes:
+    #   - /notebooks:/notebooks
+    environment:
+      - JUPYTER_TOKEN=flaviostutz
+      - SPARK_MASTER=spark://spark-master:7077
+
+  #SPARK SERVICES
+  spark-master:
+    image: bde2020/spark-master:2.4.5-hadoop2.7
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+
+  spark-worker:
+    image: bde2020/spark-worker:2.4.5-hadoop2.7
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077

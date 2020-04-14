@@ -79,6 +79,7 @@ println("************")
 
 ```
 %AddDeps org.vegas-viz vegas_2.11 0.3.11 --transitive
+%AddDeps org.vegas-viz vegas-spark_2.11 0.3.11
 implicit val render = vegas.render.ShowHTML(kernel.display.content("text/html", _))
 import vegas._
 import vegas.data.External._
